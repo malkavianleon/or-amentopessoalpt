@@ -1,0 +1,142 @@
+:root {
+    --color-primary-green: #2e7d32; /* Verde inspirado em Portugal */
+    --color-secondary-red: #c62828; /* Vermelho inspirado em Portugal/Espanha */
+    --color-tertiary-gold: #ffeb3b; /* Ouro/Amarelo suave */
+    --color-background-light: #f5f7fa;
+    --color-text-dark: #333;
+    --color-text-light: #f9f9f9;
+    --color-border-light: #e0e0e0;
+    --color-shadow: rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
+    background: linear-gradient(135deg, var(--color-background-light) 0%, #e0e6ed 100%); /* Gradiente suave */
+    color: var(--color-text-dark);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box; /* Garante que padding não adicione largura extra */
+}
+
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0 10px 30px var(--color-shadow); /* Sombra mais pronunciada e suave */
+    width: 100%;
+    max-width: 650px; /* Um pouco mais largo */
+    text-align: center;
+    border: 1px solid var(--color-border-light); /* Borda sutil */
+}
+
+header h1 {
+    color: var(--color-primary-green); /* Título em verde */
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+header h1::after { /* Detalhe decorativo abaixo do título */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-secondary-red) 0%, var(--color-tertiary-gold) 100%);
+    border-radius: 2px;
+}
+
+.dia-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background-color: var(--color-background-light); /* Fundo suave para cada item */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra mais leve para os itens */
+    transition: transform 0.2s ease-in-out;
+}
+
+.dia-item:hover {
+    transform: translateY(-3px); /* Efeito sutil ao passar o mouse */
+}
+
+.dia-item label {
+    font-size: 1.05em;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    flex-grow: 1; /* Permite que o label ocupe espaço */
+    text-align: left;
+}
+
+.dia-item input {
+    padding: 10px 12px;
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
+    width: 120px; /* Um pouco mais largo para o input */
+    text-align: right;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--color-secondary-red); /* Cor de destaque para o input */
+    background-color: #fff;
+    transition: border-color 0.2s ease;
+}
+
+.dia-item input:focus {
+    border-color: var(--color-primary-green); /* Borda verde ao focar */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2); /* Sombra de foco */
+}
+
+.total-orcamento {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid var(--color-border-light);
+    background-color: var(--color-primary-green); /* Fundo verde para a seção total */
+    color: var(--color-text-light); /* Texto claro */
+    border-radius: 0 0 15px 15px; /* Arredonda só as bordas de baixo, se fosse um elemento à parte */
+    margin: 40px -40px -40px -40px; /* Para estender a cor até as bordas do container */
+    padding: 25px 40px;
+}
+
+.total-orcamento h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--color-text-light);
+}
+
+.total-orcamento p {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 5px 0;
+    color: var(--color-text-light);
+}
+
+#total-restante, #porcentagem-gasta {
+    font-weight: 700;
+    margin-left: 8px;
+    color: var(--color-tertiary-gold); /* Cor de destaque para os valores */
+}
+
+/* Cores para o status do orçamento */
+.status-ok {
+    color: var(--color-tertiary-gold) !important; /* Dourado para OK */
+}
+
+.status-atencao {
+    color: orange !important; /* Laranja para atenção */
+}
+
+.status-critico {
+    color: var(--color-secondary-red) !important; /* Vermelho para crítico */
+}
